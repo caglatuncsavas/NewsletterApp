@@ -1,0 +1,116 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\NewsletterApp\\Newsletter\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C8E679A2-FB4A-4213-AC23-9674DA0AE634}|Newsletter.Infrastructure\\Newsletter.Infrastructure.csproj|c:\\newsletterapp\\newsletter\\newsletter.infrastructure\\repositories\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8E679A2-FB4A-4213-AC23-9674DA0AE634}|Newsletter.Infrastructure\\Newsletter.Infrastructure.csproj|solutionrelative:newsletter.infrastructure\\repositories\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65CB0F26-0D17-4037-9339-8413F78D34D7}|Newsletter.Domain\\Newsletter.Domain.csproj|c:\\newsletterapp\\newsletter\\newsletter.domain\\repositories\\iblogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65CB0F26-0D17-4037-9339-8413F78D34D7}|Newsletter.Domain\\Newsletter.Domain.csproj|solutionrelative:newsletter.domain\\repositories\\iblogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8E679A2-FB4A-4213-AC23-9674DA0AE634}|Newsletter.Infrastructure\\Newsletter.Infrastructure.csproj|c:\\newsletterapp\\newsletter\\newsletter.infrastructure\\repositories\\subscriberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8E679A2-FB4A-4213-AC23-9674DA0AE634}|Newsletter.Infrastructure\\Newsletter.Infrastructure.csproj|solutionrelative:newsletter.infrastructure\\repositories\\subscriberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8E679A2-FB4A-4213-AC23-9674DA0AE634}|Newsletter.Infrastructure\\Newsletter.Infrastructure.csproj|c:\\newsletterapp\\newsletter\\newsletter.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8E679A2-FB4A-4213-AC23-9674DA0AE634}|Newsletter.Infrastructure\\Newsletter.Infrastructure.csproj|solutionrelative:newsletter.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 203,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IBlogRepository.cs",
+              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter\\Newsletter.Domain\\Repositories\\IBlogRepository.cs",
+              "RelativeDocumentMoniker": "Newsletter.Domain\\Repositories\\IBlogRepository.cs",
+              "ToolTip": "C:\\NewsletterApp\\Newsletter\\Newsletter.Domain\\Repositories\\IBlogRepository.cs",
+              "RelativeToolTip": "Newsletter.Domain\\Repositories\\IBlogRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T20:07:48.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SubscriberRepository.cs",
+              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter\\Newsletter.Infrastructure\\Repositories\\SubscriberRepository.cs",
+              "RelativeDocumentMoniker": "Newsletter.Infrastructure\\Repositories\\SubscriberRepository.cs",
+              "ToolTip": "C:\\NewsletterApp\\Newsletter\\Newsletter.Infrastructure\\Repositories\\SubscriberRepository.cs",
+              "RelativeToolTip": "Newsletter.Infrastructure\\Repositories\\SubscriberRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T19:54:47.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BlogRepository.cs",
+              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter\\Newsletter.Infrastructure\\Repositories\\BlogRepository.cs",
+              "RelativeDocumentMoniker": "Newsletter.Infrastructure\\Repositories\\BlogRepository.cs",
+              "ToolTip": "C:\\NewsletterApp\\Newsletter\\Newsletter.Infrastructure\\Repositories\\BlogRepository.cs",
+              "RelativeToolTip": "Newsletter.Infrastructure\\Repositories\\BlogRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T19:52:17.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter\\Newsletter.Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "Newsletter.Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "C:\\NewsletterApp\\Newsletter\\Newsletter.Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "Newsletter.Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T19:49:26.433Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1511,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 140,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

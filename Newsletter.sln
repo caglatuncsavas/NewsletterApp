@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Newsletter.Application", "N
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Newsletter.Infrastructure", "Newsletter.Infrastructure\Newsletter.Infrastructure.csproj", "{C8E679A2-FB4A-4213-AC23-9674DA0AE634}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newsletter.MVC", "Newsletter.MVC\Newsletter.MVC.csproj", "{5EC94CAA-0970-47B2-97A5-7A3F61E19F15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C8E679A2-FB4A-4213-AC23-9674DA0AE634}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8E679A2-FB4A-4213-AC23-9674DA0AE634}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8E679A2-FB4A-4213-AC23-9674DA0AE634}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EC94CAA-0970-47B2-97A5-7A3F61E19F15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EC94CAA-0970-47B2-97A5-7A3F61E19F15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EC94CAA-0970-47B2-97A5-7A3F61E19F15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EC94CAA-0970-47B2-97A5-7A3F61E19F15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

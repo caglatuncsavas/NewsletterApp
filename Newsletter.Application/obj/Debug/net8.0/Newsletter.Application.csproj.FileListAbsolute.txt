@@ -1,0 +1,16 @@
+C:\NewsletterApp\Newsletter.Application\bin\Debug\net8.0\Newsletter.Application.deps.json
+C:\NewsletterApp\Newsletter.Application\bin\Debug\net8.0\Newsletter.Application.dll
+C:\NewsletterApp\Newsletter.Application\bin\Debug\net8.0\Newsletter.Application.pdb
+C:\NewsletterApp\Newsletter.Application\bin\Debug\net8.0\Newsletter.Domain.dll
+C:\NewsletterApp\Newsletter.Application\bin\Debug\net8.0\Newsletter.Domain.pdb
+C:\NewsletterApp\Newsletter.Application\obj\Debug\net8.0\Newsletter.Application.csproj.AssemblyReference.cache
+C:\NewsletterApp\Newsletter.Application\obj\Debug\net8.0\Newsletter.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\NewsletterApp\Newsletter.Application\obj\Debug\net8.0\Newsletter.Application.AssemblyInfoInputs.cache
+C:\NewsletterApp\Newsletter.Application\obj\Debug\net8.0\Newsletter.Application.AssemblyInfo.cs
+C:\NewsletterApp\Newsletter.Application\obj\Debug\net8.0\Newsletter.Application.csproj.CoreCompileInputs.cache
+C:\NewsletterApp\Newsletter.Application\obj\Debug\net8.0\Newsletter.Application.sourcelink.json
+C:\NewsletterApp\Newsletter.Application\obj\Debug\net8.0\Newslett.B42B40CF.Up2Date
+C:\NewsletterApp\Newsletter.Application\obj\Debug\net8.0\Newsletter.Application.dll
+C:\NewsletterApp\Newsletter.Application\obj\Debug\net8.0\refint\Newsletter.Application.dll
+C:\NewsletterApp\Newsletter.Application\obj\Debug\net8.0\Newsletter.Application.pdb
+C:\NewsletterApp\Newsletter.Application\obj\Debug\net8.0\ref\Newsletter.Application.dll

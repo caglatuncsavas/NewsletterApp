@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bogus" Version="35.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Newsletter.Application\Newsletter.Application.csproj" />
     <ProjectReference Include="..\Newsletter.Domain\Newsletter.Domain.csproj" />
     <ProjectReference Include="..\Newsletter.Infrastructure\Newsletter.Infrastructure.csproj" />

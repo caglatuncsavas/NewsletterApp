@@ -1,10 +1,8 @@
-﻿@{
+﻿﻿@{
     HttpContextAccessor httpContextAccessor = new();
 
     bool isAuthenticated = httpContextAccessor.HttpContext!.User.Claims.Any();
 }
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,14 +34,16 @@
                     </ul>
                     @if (!isAuthenticated)
                     {
-                        
-                    }
-                    <a class="btn btn-outline-dark" asp-controller="Auth" asp-action="Login">
+                          <a class="btn btn-outline-dark" asp-controller="Auth" asp-action="Login">
                         <i class="fa-solid fa-lock"></i>
                         </a>
-                    <a class="btn btn-outline-danger" asp-controller="Auth" asp-action="Login">
-                        <i class="fa-solid fa-power-off"></i>
-                    </a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-outline-danger" asp-controller="Auth" asp-action="LogOut">
+                            <i class="fa-solid fa-power-off"></i>
+                        </a>
+                    }
                 </div>
             </div>
         </nav>
@@ -62,7 +62,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
     <script src="https://kit.fontawesome.com/dc59d75dac.js" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

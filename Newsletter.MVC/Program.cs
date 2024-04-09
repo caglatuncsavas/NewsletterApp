@@ -3,17 +3,26 @@ using Microsoft.AspNetCore.Identity;
 using Newsletter.Application;
 using Newsletter.Domain.Entities;
 using Newsletter.Infrastructure;
+using Newsletter.Domain.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddApplication();
+services.AddFluentEmail("admin@gmail.com")
+               .AddSmtpSender("localHost", 2525);
+
+builder.Services.CreateServiceTool();
+
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication();
+
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(configure =>
 {
     configure.Cookie.Name = "Newsletter.Auth";
     configure.LoginPath = "/Auth/Login";
     configure.LogoutPath = "/Auth/Login";
+    configure.AccessDeniedPath = "/Auth/Login";
     configure.ExpireTimeSpan = TimeSpan.FromMinutes(30);
 });
 
@@ -34,6 +43,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
+app.UseAuthorization();
+
 using (var scoped = app.Services.CreateScope())
 {
     var userManager = scoped.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
@@ -46,11 +58,10 @@ using (var scoped = app.Services.CreateScope())
             UserName = "ctuncsavas"
         };
 
-        await userManager.CreateAsync(appUser, "Password12*");
+        userManager.CreateAsync(appUser, "Password12*").Wait();
     }
 }
 
-app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",

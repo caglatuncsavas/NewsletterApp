@@ -1,0 +1,6 @@
+C:\NewsletterApp\Newsletter.Consumer\obj\Debug\net8.0\Newsletter.Consumer.csproj.AssemblyReference.cache
+C:\NewsletterApp\Newsletter.Consumer\obj\Debug\net8.0\Newsletter.Consumer.GeneratedMSBuildEditorConfig.editorconfig
+C:\NewsletterApp\Newsletter.Consumer\obj\Debug\net8.0\Newsletter.Consumer.AssemblyInfoInputs.cache
+C:\NewsletterApp\Newsletter.Consumer\obj\Debug\net8.0\Newsletter.Consumer.AssemblyInfo.cs
+C:\NewsletterApp\Newsletter.Consumer\obj\Debug\net8.0\Newsletter.Consumer.csproj.CoreCompileInputs.cache
+C:\NewsletterApp\Newsletter.Consumer\obj\Debug\net8.0\Newsletter.Consumer.sourcelink.json

@@ -26,18 +26,25 @@ public class AuthController(IMediator mediator) : Controller
             TempData["Error"] = response.ErrorMessages!.First();
             return RedirectToAction("Login");
         }
+
         List<Claim> claims = new()
         {
             new Claim("Name", "Cagla Tunc Savas"),
         };
 
-        var claimsIdentity = new ClaimsIdentity(claims);
+        var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+        var authProperties = new AuthenticationProperties();
 
-        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+        await HttpContext.SignInAsync( new ClaimsPrincipal(claimsIdentity), authProperties);
 
         return RedirectToAction("Index", "Home");
     }
 
-
+    [HttpGet]
+    public async Task<IActionResult> LogOut()
+    {
+        await HttpContext.SignOutAsync();
+        return RedirectToAction("Index", "Home");
+    }
 
 }

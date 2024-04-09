@@ -12,7 +12,8 @@ public static class CommonExtensions
             {"ö", "o" },
             {"ş", "s" },
             {" ", "-" },
-            {"#", "sharp" }
+            {"#", "sharp" },
+            {"?", "" }
         };
 
         string url = str.ToLower();

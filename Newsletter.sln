@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Newsletter.Application", "N
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Newsletter.Infrastructure", "Newsletter.Infrastructure\Newsletter.Infrastructure.csproj", "{C8E679A2-FB4A-4213-AC23-9674DA0AE634}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newsletter.MVC", "Newsletter.MVC\Newsletter.MVC.csproj", "{5EC94CAA-0970-47B2-97A5-7A3F61E19F15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Newsletter.MVC", "Newsletter.MVC\Newsletter.MVC.csproj", "{5EC94CAA-0970-47B2-97A5-7A3F61E19F15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newsletter.Consumer", "Newsletter.Consumer\Newsletter.Consumer.csproj", "{79D74A45-8C9F-4CBA-B208-08060B4C434B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5EC94CAA-0970-47B2-97A5-7A3F61E19F15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EC94CAA-0970-47B2-97A5-7A3F61E19F15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EC94CAA-0970-47B2-97A5-7A3F61E19F15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79D74A45-8C9F-4CBA-B208-08060B4C434B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79D74A45-8C9F-4CBA-B208-08060B4C434B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79D74A45-8C9F-4CBA-B208-08060B4C434B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79D74A45-8C9F-4CBA-B208-08060B4C434B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

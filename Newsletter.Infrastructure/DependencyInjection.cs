@@ -7,6 +7,8 @@ using Newsletter.Domain.Repositories;
 using Newsletter.Infrastructure.Context;
 using Newsletter.Infrastructure.Repositories;
 using Scrutor;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System;
 
 namespace Newsletter.Infrastructure;
 public static class DependencyInjection
@@ -17,7 +19,8 @@ public static class DependencyInjection
     {
        services.AddDbContext<ApplicationDbContext>(options =>
        {
-           options.UseInMemoryDatabase(configuration.GetConnectionString("InMemory") ?? "");
+            //options.UseInMemoryDatabase(configuration.GetConnectionString("InMemory") ?? "");
+           options.UseSqlServer(configuration.GetConnectionString("SqlServer"));
        });
 
         services.AddIdentityCore<AppUser>().AddEntityFrameworkStores<ApplicationDbContext>();

@@ -3,24 +3,35 @@
   "WorkspaceRootPath": "C:\\NewsletterApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12BFEBE3-9564-4DE5-B822-36FE6219230B}|Newsletter.Application\\Newsletter.Application.csproj|c:\\newsletterapp\\newsletter.application\\features\\blogs\\createblog\\createblogcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12BFEBE3-9564-4DE5-B822-36FE6219230B}|Newsletter.Application\\Newsletter.Application.csproj|solutionrelative:newsletter.application\\features\\blogs\\createblog\\createblogcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{65CB0F26-0D17-4037-9339-8413F78D34D7}|Newsletter.Domain\\Newsletter.Domain.csproj|c:\\newsletterapp\\newsletter.domain\\events\\sendqueuesubscribers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65CB0F26-0D17-4037-9339-8413F78D34D7}|Newsletter.Domain\\Newsletter.Domain.csproj|solutionrelative:newsletter.domain\\events\\sendqueuesubscribers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EC94CAA-0970-47B2-97A5-7A3F61E19F15}|Newsletter.MVC\\Newsletter.MVC.csproj|c:\\newsletterapp\\newsletter.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EC94CAA-0970-47B2-97A5-7A3F61E19F15}|Newsletter.MVC\\Newsletter.MVC.csproj|solutionrelative:newsletter.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{79D74A45-8C9F-4CBA-B208-08060B4C434B}|Newsletter.Consumer\\Newsletter.Consumer.csproj|c:\\newsletterapp\\newsletter.consumer\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79D74A45-8C9F-4CBA-B208-08060B4C434B}|Newsletter.Consumer\\Newsletter.Consumer.csproj|solutionrelative:newsletter.consumer\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12BFEBE3-9564-4DE5-B822-36FE6219230B}|Newsletter.Application\\Newsletter.Application.csproj|c:\\newsletterapp\\newsletter.application\\features\\blogs\\createblog\\createblogcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12BFEBE3-9564-4DE5-B822-36FE6219230B}|Newsletter.Application\\Newsletter.Application.csproj|solutionrelative:newsletter.application\\features\\blogs\\createblog\\createblogcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79D74A45-8C9F-4CBA-B208-08060B4C434B}|Newsletter.Consumer\\Newsletter.Consumer.csproj|c:\\newsletterapp\\newsletter.consumer\\responsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79D74A45-8C9F-4CBA-B208-08060B4C434B}|Newsletter.Consumer\\Newsletter.Consumer.csproj|solutionrelative:newsletter.consumer\\responsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{65CB0F26-0D17-4037-9339-8413F78D34D7}|Newsletter.Domain\\Newsletter.Domain.csproj|c:\\newsletterapp\\newsletter.domain\\events\\blogevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65CB0F26-0D17-4037-9339-8413F78D34D7}|Newsletter.Domain\\Newsletter.Domain.csproj|solutionrelative:newsletter.domain\\events\\blogevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12BFEBE3-9564-4DE5-B822-36FE6219230B}|Newsletter.Application\\Newsletter.Application.csproj|c:\\newsletterapp\\newsletter.application\\features\\blogs\\createblog\\createblogcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12BFEBE3-9564-4DE5-B822-36FE6219230B}|Newsletter.Application\\Newsletter.Application.csproj|solutionrelative:newsletter.application\\features\\blogs\\createblog\\createblogcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{79D74A45-8C9F-4CBA-B208-08060B4C434B}|Newsletter.Consumer\\Newsletter.Consumer.csproj|c:\\newsletterapp\\newsletter.consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79D74A45-8C9F-4CBA-B208-08060B4C434B}|Newsletter.Consumer\\Newsletter.Consumer.csproj|solutionrelative:newsletter.consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79D74A45-8C9F-4CBA-B208-08060B4C434B}|Newsletter.Consumer\\Newsletter.Consumer.csproj|c:\\newsletterapp\\newsletter.consumer\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79D74A45-8C9F-4CBA-B208-08060B4C434B}|Newsletter.Consumer\\Newsletter.Consumer.csproj|solutionrelative:newsletter.consumer\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ercan\\AppData\\Roaming\\Microsoft\\UserSecrets\\afa3e5d1-880d-488a-a998-8e5e063428a2\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,8 +41,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Blog.cs",
+              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter.Consumer\\Models\\Blog.cs",
+              "RelativeDocumentMoniker": "Newsletter.Consumer\\Models\\Blog.cs",
+              "ToolTip": "C:\\NewsletterApp\\Newsletter.Consumer\\Models\\Blog.cs",
+              "RelativeToolTip": "Newsletter.Consumer\\Models\\Blog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-15T18:29:07.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateBlogCommand.cs",
+              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter.Application\\Features\\Blogs\\CreateBlog\\CreateBlogCommand.cs",
+              "RelativeDocumentMoniker": "Newsletter.Application\\Features\\Blogs\\CreateBlog\\CreateBlogCommand.cs",
+              "ToolTip": "C:\\NewsletterApp\\Newsletter.Application\\Features\\Blogs\\CreateBlog\\CreateBlogCommand.cs",
+              "RelativeToolTip": "Newsletter.Application\\Features\\Blogs\\CreateBlog\\CreateBlogCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-15T18:28:58.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ResponseDto.cs",
+              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter.Consumer\\ResponseDto.cs",
+              "RelativeDocumentMoniker": "Newsletter.Consumer\\ResponseDto.cs",
+              "ToolTip": "C:\\NewsletterApp\\Newsletter.Consumer\\ResponseDto.cs",
+              "RelativeToolTip": "Newsletter.Consumer\\ResponseDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-15T18:28:49.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BlogEvent.cs",
+              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter.Domain\\Events\\BlogEvent.cs",
+              "RelativeDocumentMoniker": "Newsletter.Domain\\Events\\BlogEvent.cs",
+              "ToolTip": "C:\\NewsletterApp\\Newsletter.Domain\\Events\\BlogEvent.cs",
+              "RelativeToolTip": "Newsletter.Domain\\Events\\BlogEvent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-15T18:28:44.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SendQueueSubscribers.cs",
+              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter.Domain\\Events\\SendQueueSubscribers.cs",
+              "RelativeDocumentMoniker": "Newsletter.Domain\\Events\\SendQueueSubscribers.cs",
+              "ToolTip": "C:\\NewsletterApp\\Newsletter.Domain\\Events\\SendQueueSubscribers.cs",
+              "RelativeToolTip": "Newsletter.Domain\\Events\\SendQueueSubscribers.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-15T18:21:06.372Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -42,67 +118,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter.MVC\\Program.cs",
-              "RelativeDocumentMoniker": "Newsletter.MVC\\Program.cs",
-              "ToolTip": "C:\\NewsletterApp\\Newsletter.MVC\\Program.cs",
-              "RelativeToolTip": "Newsletter.MVC\\Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAEMAAAAAAAAA",
+              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter.Consumer\\Program.cs",
+              "RelativeDocumentMoniker": "Newsletter.Consumer\\Program.cs",
+              "ToolTip": "C:\\NewsletterApp\\Newsletter.Consumer\\Program.cs",
+              "RelativeToolTip": "Newsletter.Consumer\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE4AAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T15:15:14.673Z",
+              "WhenOpened": "2024-04-15T16:02:05.456Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BlogEvent.cs",
-              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter.Domain\\Events\\BlogEvent.cs",
-              "RelativeDocumentMoniker": "Newsletter.Domain\\Events\\BlogEvent.cs",
-              "ToolTip": "C:\\NewsletterApp\\Newsletter.Domain\\Events\\BlogEvent.cs",
-              "RelativeToolTip": "Newsletter.Domain\\Events\\BlogEvent.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 6,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter.Consumer\\Context\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Newsletter.Consumer\\Context\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\NewsletterApp\\Newsletter.Consumer\\Context\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Newsletter.Consumer\\Context\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAJAQAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T15:14:38.491Z",
+              "WhenOpened": "2024-04-15T16:00:59.651Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CreateBlogCommand.cs",
-              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter.Application\\Features\\Blogs\\CreateBlog\\CreateBlogCommand.cs",
-              "RelativeDocumentMoniker": "Newsletter.Application\\Features\\Blogs\\CreateBlog\\CreateBlogCommand.cs",
-              "ToolTip": "C:\\NewsletterApp\\Newsletter.Application\\Features\\Blogs\\CreateBlog\\CreateBlogCommand.cs",
-              "RelativeToolTip": "Newsletter.Application\\Features\\Blogs\\CreateBlog\\CreateBlogCommand.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T15:13:16.508Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CreateBlogCommandHandler.cs",
-              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter.Application\\Features\\Blogs\\CreateBlog\\CreateBlogCommandHandler.cs",
-              "RelativeDocumentMoniker": "Newsletter.Application\\Features\\Blogs\\CreateBlog\\CreateBlogCommandHandler.cs",
-              "ToolTip": "C:\\NewsletterApp\\Newsletter.Application\\Features\\Blogs\\CreateBlog\\CreateBlogCommandHandler.cs",
-              "RelativeToolTip": "Newsletter.Application\\Features\\Blogs\\CreateBlog\\CreateBlogCommandHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T15:11:52.951Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SendQueueSubscribers.cs",
-              "DocumentMoniker": "C:\\NewsletterApp\\Newsletter.Domain\\Events\\SendQueueSubscribers.cs",
-              "RelativeDocumentMoniker": "Newsletter.Domain\\Events\\SendQueueSubscribers.cs",
-              "ToolTip": "C:\\NewsletterApp\\Newsletter.Domain\\Events\\SendQueueSubscribers.cs",
-              "RelativeToolTip": "Newsletter.Domain\\Events\\SendQueueSubscribers.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAADYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T15:08:29.908Z",
+              "DocumentIndex": 7,
+              "Title": "secrets.json",
+              "DocumentMoniker": "C:\\Users\\ercan\\AppData\\Roaming\\Microsoft\\UserSecrets\\afa3e5d1-880d-488a-a998-8e5e063428a2\\secrets.json",
+              "RelativeDocumentMoniker": "..\\Users\\ercan\\AppData\\Roaming\\Microsoft\\UserSecrets\\afa3e5d1-880d-488a-a998-8e5e063428a2\\secrets.json",
+              "ToolTip": "C:\\Users\\ercan\\AppData\\Roaming\\Microsoft\\UserSecrets\\afa3e5d1-880d-488a-a998-8e5e063428a2\\secrets.json",
+              "RelativeToolTip": "..\\Users\\ercan\\AppData\\Roaming\\Microsoft\\UserSecrets\\afa3e5d1-880d-488a-a998-8e5e063428a2\\secrets.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAD2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-15T16:01:26.988Z",
               "EditorCaption": ""
             }
           ]

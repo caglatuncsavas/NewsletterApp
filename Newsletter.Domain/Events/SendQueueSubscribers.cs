@@ -11,12 +11,12 @@ public sealed class SendQueueSubscribers(
 {
     public async Task Handle(BlogEvent notification, CancellationToken cancellationToken)
     {
-        //Bağlantı oluşturuluyor.
+        //Creating the connection.
         var factory = new ConnectionFactory { HostName = "localhost" };
         using var connection = factory.CreateConnection();
         using var channel = connection.CreateModel();
 
-        //Kuyruk oluşturuluyor.
+        //Queue is being created.
         channel.QueueDeclare(
             queue: "newsletter",
             exclusive: false,
@@ -32,15 +32,15 @@ public sealed class SendQueueSubscribers(
                 BlogId = notification.BlogId
             };
 
-            //kuyruğa göndereceğiz.
+            //We will send it to the queue.
 
-            //Datayı önce stringe çeviriyoruz.
+            //We first convert the data to string.
             string message = JsonSerializer.Serialize(data);
 
-            //stringden de byte'a çeviriyoruz.  Kuyruğa göndereceğimiz body hazır.       
+            //We convert from string to byte. The body we will send to the queue is ready.      
             var body = Encoding.UTF8.GetBytes(message);
 
-            //Kuyruğa gönderiyoruz.
+            //We send it to the queue.
             channel.BasicPublish(
                 exchange: string.Empty,
                 routingKey: "newsletter",

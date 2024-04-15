@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Name": "Newsletter.MVC\\Newsletter.MVC.csproj",
+        "Action": "Start"
+      },
+      {
+        "Name": "Newsletter.Consumer\\Newsletter.Consumer.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

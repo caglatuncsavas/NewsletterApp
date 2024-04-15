@@ -16,3 +16,5 @@ C:\NewsletterApp\Newsletter.Infrastructure\obj\Debug\net8.0\Newsletter.Infrastru
 C:\NewsletterApp\Newsletter.Infrastructure\obj\Debug\net8.0\refint\Newsletter.Infrastructure.dll
 C:\NewsletterApp\Newsletter.Infrastructure\obj\Debug\net8.0\Newsletter.Infrastructure.pdb
 C:\NewsletterApp\Newsletter.Infrastructure\obj\Debug\net8.0\ref\Newsletter.Infrastructure.dll
+C:\NewsletterApp\Newsletter.Infrastructure\bin\Debug\net8.0\Newsletter.Infrastructure.runtimeconfig.json
+C:\NewsletterApp\Newsletter.Infrastructure\obj\Debug\net8.0\Newsletter.Infrastructure.genruntimeconfig.cache

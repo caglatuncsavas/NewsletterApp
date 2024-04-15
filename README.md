@@ -31,3 +31,4 @@ Burada, Domain Event kullanıyoruz. Nasıl?
 Eğer Create işlemi esnasında Blog'un isPublish true ise Domain eventi tetiklenip, mail gönderme işleminin başlamasını bekliyoruz.
 
 
+**Kuyruğu dinleyecek bir proje eklendi. Newsletter.Consumer console.app eklendi. Bu kuyruğu dinleyen consumer .

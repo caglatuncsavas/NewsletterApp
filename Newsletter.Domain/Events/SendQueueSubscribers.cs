@@ -4,7 +4,6 @@ using Newsletter.Domain.Repositories;
 using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace Newsletter.Domain.Events;
 public sealed class SendQueueSubscribers(
@@ -12,17 +11,19 @@ public sealed class SendQueueSubscribers(
 {
     public async Task Handle(BlogEvent notification, CancellationToken cancellationToken)
     {
-        var factory = new ConnectionFactory { HostName = "localHost" };
+        //Bağlantı oluşturuluyor.
+        var factory = new ConnectionFactory { HostName = "localhost" };
         using var connection = factory.CreateConnection();
         using var channel = connection.CreateModel();
 
+        //Kuyruk oluşturuluyor.
         channel.QueueDeclare(
             queue: "newsletter",
             exclusive: false,
             autoDelete: false,
             arguments: null);
 
-        List<string> emails = await subscriberRepository.Where(p=>p.EmailConfirmed).Select(s=>s.Email).ToListAsync();
+        List<string> emails = await subscriberRepository.Where(p => p.EmailConfirmed).Select(s => s.Email).ToListAsync();
         foreach (var email in emails)
         {
             var data = new
@@ -33,10 +34,13 @@ public sealed class SendQueueSubscribers(
 
             //kuyruğa göndereceğiz.
 
-        string message = JsonSerializer.Serialize(data);
-          
-        var body = Encoding.UTF8.GetBytes(message);
+            //Datayı önce stringe çeviriyoruz.
+            string message = JsonSerializer.Serialize(data);
 
+            //stringden de byte'a çeviriyoruz.  Kuyruğa göndereceğimiz body hazır.       
+            var body = Encoding.UTF8.GetBytes(message);
+
+            //Kuyruğa gönderiyoruz.
             channel.BasicPublish(
                 exchange: string.Empty,
                 routingKey: "newsletter",

@@ -56,3 +56,5 @@ C:\NewsletterApp\Newsletter.MVC\obj\Debug\net8.0\Newsletter.MVC.csproj.AssemblyR
 C:\NewsletterApp\Newsletter.MVC\obj\Debug\net8.0\Newslett.2C95E09A.Up2Date
 C:\NewsletterApp\Newsletter.MVC\bin\Debug\net8.0\Bogus.dll
 C:\NewsletterApp\Newsletter.MVC\bin\Debug\net8.0\RabbitMQ.Client.dll
+C:\NewsletterApp\Newsletter.MVC\bin\Debug\net8.0\FluentEmail.Core.dll
+C:\NewsletterApp\Newsletter.MVC\bin\Debug\net8.0\FluentEmail.Smtp.dll

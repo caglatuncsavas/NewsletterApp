@@ -25,7 +25,7 @@ internal sealed class CreateBlogCommandHandler(
 
         if(blog.IsPublish)
         {
-            await mediator.Publish(new BlogEvent(blog.Id), cancellationToken);
+            await mediator.Publish(new BlogEvent(blog.Id));
         }
 
         return "Blog created successfully.";

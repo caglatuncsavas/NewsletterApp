@@ -1,78 +1,78 @@
-﻿using FluentEmail.Core;
-using FluentEmail.Core.Models;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Newsletter.Domain.Entities;
-using Newsletter.Domain.Repositories;
-using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
-using System.Text;
-using System.Text.Json;
+﻿//using FluentEmail.Core;
+//using FluentEmail.Core.Models;
+//using Microsoft.Extensions.DependencyInjection;
+//using Microsoft.Extensions.Hosting;
+//using Newsletter.Domain.Entities;
+//using Newsletter.Domain.Repositories;
+//using RabbitMQ.Client;
+//using RabbitMQ.Client.Events;
+//using System.Text;
+//using System.Text.Json;
 
-namespace Newsletter.Application.Services;
-public sealed class BlogBackgroundService : BackgroundService
-{
-    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
-    {
-        Console.WriteLine("Background service is starting...");
+//namespace Newsletter.Application.Services;
+//public sealed class BlogBackgroundService : BackgroundService
+//{
+//    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+//    {
+//        Console.WriteLine("Background service is starting...");
 
-        var factory = new ConnectionFactory { HostName = "localHost" };
-        using var connection = factory.CreateConnection();
-        using var channel = connection.CreateModel();
+//        var factory = new ConnectionFactory { HostName = "localhost" };
+//        using var connection = factory.CreateConnection();
+//        using var channel = connection.CreateModel();
 
-        channel.QueueDeclare(
-            queue:"newsletter",
-            exclusive:false,
-            autoDelete:false,
-            arguments:null);
+//        channel.QueueDeclare(
+//            queue: "newsletter",
+//            exclusive: false,
+//            autoDelete: false,
+//            arguments: null);
 
-        Console.WriteLine(" [*] Waiting for messages...");
-        
-        var consumer = new EventingBasicConsumer(channel);
-        consumer.Received += (model, ea) =>
-        {
-            var body = ea.Body.ToArray();
-            var message = Encoding.UTF8.GetString(body);
-            BlogQueueResponseDto? response = JsonSerializer.Deserialize<BlogQueueResponseDto>(message);
-            if (response is null)
-            {
-                Console.WriteLine("Response is empty or null");
-            }
+//        Console.WriteLine(" [*] Waiting for messages...");
 
-            var services = new ServiceCollection();
-            var scoped = services.BuildServiceProvider();
-            var blogRepository = scoped.GetRequiredService<IBlogRepository>();
-            var fluentEmail = scoped.GetRequiredService<IFluentEmail>();
+//        var consumer = new EventingBasicConsumer(channel);
+//        consumer.Received += (model, ea) =>
+//        {
+//            var body = ea.Body.ToArray();
+//            var message = Encoding.UTF8.GetString(body);
+//            BlogQueueResponseDto? response = JsonSerializer.Deserialize<BlogQueueResponseDto>(message);
+//            if (response is null)
+//            {
+//                Console.WriteLine("Response is empty or null");
+//            }
 
-        Blog? blog = blogRepository.GetByExpression(p=> p.Id == response!.BlogId);
+//            var services = new ServiceCollection();
+//            var scoped = services.BuildServiceProvider();
+//            var blogRepository = scoped.GetRequiredService<IBlogRepository>();
+//            var fluentEmail = scoped.GetRequiredService<IFluentEmail>();
 
-            if (blog is null)
-            {
-                Console.WriteLine("Blog not found");
-            }
+//            Blog? blog = blogRepository.GetByExpression(p => p.Id == response!.BlogId);
 
-            SendResponse sendResponse = fluentEmail
-            .To(response!.Email)
-            .Subject(blog!.Title)
-            .Body(blog!.Content, true)
-            .Send();
+//            if (blog is null)
+//            {
+//                Console.WriteLine("Blog not found");
+//            }
 
-            if (sendResponse.Successful)
-            {
-                Console.WriteLine($"[x] {response.Email} blogs sent");
-            }
-        };
+//            SendResponse sendResponse = fluentEmail
+//            .To(response!.Email)
+//            .Subject(blog!.Title)
+//            .Body(blog!.Content, true)
+//            .Send();
 
-        channel.BasicConsume(
-              queue: "newsletter",
-              autoAck: true,
-              consumer: consumer);
+//            if (sendResponse.Successful)
+//            {
+//                Console.WriteLine($"[x] {response.Email} blogs sent");
+//            }
+//        };
 
-        await Task.CompletedTask;
-    }
-}
+//        channel.BasicConsume(
+//              queue: "newsletter",
+//              autoAck: true,
+//              consumer: consumer);
+
+//        await Task.CompletedTask;
+//    }
+//}
 
 
-public sealed record BlogQueueResponseDto(
- Guid BlogId,
- string Email);
+//public sealed record BlogQueueResponseDto(
+// Guid BlogId,
+// string Email);

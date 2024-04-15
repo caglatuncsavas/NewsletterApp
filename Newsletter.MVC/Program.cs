@@ -7,9 +7,6 @@ using Newsletter.Domain.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 
-services.AddFluentEmail("admin@gmail.com")
-               .AddSmtpSender("localHost", 2525);
-
 builder.Services.CreateServiceTool();
 
 builder.Services.AddInfrastructure(builder.Configuration);

@@ -5,6 +5,8 @@ Kullanılan Teknolojiler:
 -Result Pattern
 -RabbitMQ
 -Domain Event
+-smtp4dev: Mail gönderme testi için kullanıyoruz (FluentEmail.Smtp kütüphanesi)
+-MS SQL
 
 **Kullanıcı Girişi yapıldı: Cookie yapısı kullanıldı.
 **Newsletters-Home-Login sayfaları tasarlandı. 
@@ -31,4 +33,15 @@ Burada, Domain Event kullanıyoruz. Nasıl?
 Eğer Create işlemi esnasında Blog'un isPublish true ise Domain eventi tetiklenip, mail gönderme işleminin başlamasını bekliyoruz.
 
 
-**Kuyruğu dinleyecek bir proje eklendi. Newsletter.Consumer console.app eklendi. Bu kuyruğu dinleyen consumer .
+**Kuyruğu dinleyecek bir proje eklendi. Newsletter.Consumer console.app eklendi. Bu kuyruğu dinleyen consumer . Burada Kuyruğa gönderdiğimiz verileri  (blogId ve mail adresini) response da yakalıyoruz.
+Mail göndermek için fake bir mail yapısı kullandık.
+
+
+
+TEST:
+Uygulamayı çalıştır.
+Postman de seed data bas.
+blog ekle.
+Kuyruğu kontrol et.
+Consumer consoleapp çalıstır.
+Smtp kontrol et mailler iletilmiş mi?

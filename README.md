@@ -37,6 +37,11 @@ Eğer Create işlemi esnasında Blog'un isPublish true ise Domain eventi tetikle
 Mail göndermek için fake bir mail yapısı kullandık.
 
 
+***Son Yapılanlar:
+Yetki olmayan sayfaya giriş yapıldığında yönlendirilecek sayfa
+ChangeStatus için Checkbox eklendi.Publish etmediğim blog yazısını Publish'e çekip değiştirebilmek için.
+Kuyruğu dinleyecek bir Background Service yazıldı.(Dependency Injection için Service Tool kullanıldı.)
+
 
 TEST:
 Uygulamayı çalıştır.

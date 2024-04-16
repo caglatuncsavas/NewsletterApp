@@ -7,8 +7,6 @@ using Newsletter.Domain.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.CreateServiceTool();
-
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 
@@ -19,13 +17,15 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     configure.Cookie.Name = "Newsletter.Auth";
     configure.LoginPath = "/Auth/Login";
     configure.LogoutPath = "/Auth/Login";
-    configure.AccessDeniedPath = "/Auth/Login";
+    configure.AccessDeniedPath = "/Auth/Login"; // The page to be redirected when logging in to an unauthorized page
     configure.ExpireTimeSpan = TimeSpan.FromMinutes(30);
 });
 
 builder.Services.AddAuthorization();
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.CreateServiceTool();
 
 var app = builder.Build();
 

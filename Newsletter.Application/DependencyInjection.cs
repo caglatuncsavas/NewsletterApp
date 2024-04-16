@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Newsletter.Application.Services;
 using Newsletter.Domain.Entities;
 
 namespace Newsletter.Application;
@@ -11,7 +12,7 @@ public static class DependencyInjection
             .AddFluentEmail("admin@gmail.com")
             .AddSmtpSender("localhost", 2525);
 
-        // services.AddHostedService<BlogBackgroundService>();
+        services.AddHostedService<BlogBackgroundService>();
 
         services.AddMediatR(configuration =>
         {

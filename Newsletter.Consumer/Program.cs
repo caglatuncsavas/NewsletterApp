@@ -26,6 +26,7 @@ using var channel = connection.CreateModel();
 
 channel.QueueDeclare(
     queue: "newsletter",
+    durable: false,
     exclusive: false,
     autoDelete: false,
     arguments: null);

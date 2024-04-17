@@ -18,7 +18,7 @@ public sealed class SendQueueSubscribers(
 
         //Queue is being created.
         channel.QueueDeclare(
-            queue: "newsletter2",
+            queue: "newsletter",
             exclusive: false,
             autoDelete: false,
             arguments: null);
@@ -29,7 +29,7 @@ public sealed class SendQueueSubscribers(
             var data = new
             {
                 Email = email,
-                BlogId = notification.BlogId
+                BlogId = notification.BlogId,
             };
 
             //We will send it to the queue.
@@ -43,7 +43,7 @@ public sealed class SendQueueSubscribers(
             //We send it to the queue.
             channel.BasicPublish(
                 exchange: string.Empty,
-                routingKey: "newsletter2",
+                routingKey: "newsletter",
                 basicProperties: null,
                 body: body);
 

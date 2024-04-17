@@ -36,11 +36,11 @@
                     <p>
                         @if (blog.IsPublish)
                         {
-                            <input type="checkbox" onchange="changeStatus('blog.Id)" checked />
+                            <input type="checkbox" onchange="changeStatus('@blog.Id)" checked />
                         }
                         else
                         {
-                            <input type="checkbox" onchange="changeStatus('blog.Id)" />
+                            <input type="checkbox" onchange="changeStatus('@blog.Id)" />
                         }
 
                       @*   @if (blog.IsPublish)

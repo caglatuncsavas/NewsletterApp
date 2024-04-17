@@ -27,7 +27,7 @@ internal sealed class ChangeStatusCommandHandler(
 
         if(blog.IsPublish)
         {
-            await mediator.Publish(new BlogEvent(request.Id), cancellationToken);
+            await mediator.Publish(new BlogEvent(request.Id));
         }
 
         return "Change status successful";

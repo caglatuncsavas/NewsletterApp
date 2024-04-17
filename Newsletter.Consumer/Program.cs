@@ -19,7 +19,6 @@ var serviceProvider = services.BuildServiceProvider();
 
 ApplicationDbContext context = new();
 
-
 var factory = new ConnectionFactory { HostName = "localhost" };
 using var connection = factory.CreateConnection();
 using var channel = connection.CreateModel();
@@ -40,7 +39,7 @@ consumer.Received += (model, ea) =>
     var body = ea.Body.ToArray();
     var message = Encoding.UTF8.GetString(body);
 
-    //message'i objeye çeviriyoruz.
+    //We turn the message into an object.
     ResponseDto? response = JsonSerializer.Deserialize<ResponseDto>(message);
     if (response is null)
     {
@@ -48,7 +47,7 @@ consumer.Received += (model, ea) =>
         Console.WriteLine("Repsonse is empty or null");
     }
 
-    //mail gönderme işlemi yapılacak.
+    //sending email will be done.
     Blog? blog = context.Blogs.Find(response.BlogId);
     if(blog is null)
     {

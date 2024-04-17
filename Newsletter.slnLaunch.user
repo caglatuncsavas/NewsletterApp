@@ -4,10 +4,11 @@
     "Projects": [
       {
         "Name": "Newsletter.MVC\\Newsletter.MVC.csproj",
-        "Action": "Start"
+        "Action": "Start",
+        "DebugTarget": ""
       },
       {
-        "Name": "Newsletter.Consumer\\Newsletter.Consumer.csproj",
+        "Name": "Newsletter.Application\\Newsletter.Application.csproj",
         "Action": "Start"
       }
     ]

@@ -48,5 +48,7 @@ Uygulamayı çalıştır.
 Postman de seed data bas.
 blog ekle.
 Kuyruğu kontrol et.
-Consumer consoleapp çalıstır.
+Consumer consoleapp çalıstır.(Powershell de dotnet run diye çalıştırabilirsiniz ya da vs de solutıon da properties de multiple startup project de Newsletter.Consumer ve Newsletter.MVC yi start diyebilirsiniz. )
 Smtp kontrol et mailler iletilmiş mi?
+
+

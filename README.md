@@ -1,47 +1,67 @@
-Kullanılan Teknolojiler:
--MVC
--CQRS Pattern
--Clean Architecture
--Result Pattern
--RabbitMQ
--Domain Event
--smtp4dev: Mail gönderme testi için kullanıyoruz (FluentEmail.Smtp kütüphanesi)
--MS SQL
+# Newsletter Application
+Bu proje, .NET MVC kullanılarak geliştirilmiş bir Newsletter uygulamasıdır. Temel amacı, RabbitMQ kullanımını öğrenmek ve bu süreçte Clean Architecture, CQRS ve Domain Events gibi  yazılım geliştirme tekniklerini  uygulamaktır.
+"Projeyi geliştirirken, RabbitMQ ile entegre edilen farklı tüketici yapıları olan Console Application ve Background Service kullanıldı. her birinin sistemdeki rolü ve sağladığı avantajlar gözlemlendi. Öğrenmek ve daha derinlemesine anlamak isteyenler için, bu yapıların nasıl kullanıldığını gösteren kodlar projemDE mevcuttur ve incelenebilir.
 
-**Kullanıcı Girişi yapıldı: Cookie yapısı kullanıldı.
-**Newsletters-Home-Login sayfaları tasarlandı. 
-**Otomatik atanan bir kullanıcı eklendi.
+## Kullanılan Teknolojiler
+- **MVC**: Model-View-Controller mimarisi.
+- **CQRS Pattern**: Command Query Responsibility Segregation, komut ve sorguların ayrıştırılması.
+- **Clean Architecture**: Bağımlılıkların düşük olması ve bağımsızlık sağlanması amacıyla katmanlı mimari.
+- **RabbitMQ**: Mesaj kuyruğu yönetimi.
+- **Result Pattern**: İşlemlerden dönüş türleriyle ilgili standart bir yapı.
+- **Domain Event**: Domain olaylarının yönetilmesi.
+- **MS SQL**: Veritabanı yönetimi.
 
-Kullanılan Kütüphaneler:
--Identity
--MediatR
--AutoMapper
--CTS.Result
--EntityFrameworkCore.InMemory
--Scrutor?(Şimdilik inaktif)
--Bogus
+## Kullanılan Kütüphaneler
+- **Identity**: Kimlik ve yetkilendirme işlemleri için.
+- **MediatR**: CQRS deseni uygulamalarında mediator kullanımı.
+- **AutoMapper**: Nesneler arası otomatik tip dönüşümleri.
+- **CTS.Result**: İşlem sonuçlarını standart bir formatta döndürmek için.
+- **Scrutor**: (Şu anda inaktif) - Uygulama başlatılırken servis kaydı yapmak için.
+- **Bogus**:  Subscriber listesine tek tek mail gönderebilmek içn fake veriler oluşturmak için.
+- **FluentEmail.Smtp (smtp4dev )**: Geliştirme sürecinde mail gönderimlerini test etmek için
 
-**>Kullanıcı Giriş yaptıktan sonra Newsletter sayfasında BLOG ekleme işlemi: Create()
-**Subscriber listesine tek tek mail göndermek istendiğinde;
-Seed data ile fake veriler basıldı. - Önce 5 tane blog ekliyoruz. (Bogus Kütüphanesi kullanıyoruz)
-Subscriber listesi oluşturuyorum ve 1000 tane mail adresi kaydediyoruz.
+## Özellikler
+
+### Kullanıcı Girişi
+- Cookie tabanlı kimlik doğrulama yapısı.
+- Home, Login ve Newsletter sayfaları.
+- Otomatik atanan bir kullanıcı eklendi.
+- Yetki olmayan sayfaya giriş yapıldığında yönlendirilecek sayfa eklendi.
+
+### Newsletter Yönetimi - Consumer: Console.App
+- Yeni blog ekleme.
+- SeedData ile Subscriber listesine fake veri basma.
+- Yazımı tamamlanan blogları mail olarak göndermek için kuyruk sistemi kullanılacağından Queue oluşturuldu. Örnek:Blog publish oldu, 1000 tane mail kuyruğa gönderildi.
+- Blog yazısının Publish edilmesi sürecinde DomainEvent kullanıldı. 
+- Kuyruğu dinleyecek bir proje eklendi. "Newsletter.Consumer" console.app .
+- Mail göndermek için fake bir mail yapısı (smtp4dev) kullanıldı.
+
+### Newsletter Yönetimi - Consumer: BackgroundService
+- Publish edilmeyen blog yazısını Publish'e çekip değiştirebilmek için(ChangeStatus) Checkbox eklendi.
+- Kuyruğu dinleyecek bir Background Service yazıldı.(Dependency Injection için Service Tool kullanıldı.)
+
+### RabbitMQ ile Asenkron İletişim
+
+RabbitMQ, projede asenkron iletişim sağlamak için kritik bir rol oynar. Örneğin, bir uygulamanın bir bölümünde oluşturulan veri veya bilgi, başka bir bölümde işlenmek üzere RabbitMQ kullanılarak gönderilir. Bu işlem asenkron gerçekleşir; yani bir bölüm işini bitirip mesajı gönderdikten sonra, diğer bölüm mesajı alıp işlemeye hazır olduğunda işleme başlar. Bu, mesajı gönderen bölümün kendi işlemlerine devam etmesine olanak tanır ve mesajın alınıp işlenmesini beklemez.
 
 
-**Yazılan Blogların kayıt işleminden sonra mail göndermek için kuyruk sistemi kullanıldı Queue oluşturuldu. 
-Blog Publish edildikten sonra, 1000 tane maili  tek tek kuyruğa gönderiyoruz.
+### RabbitMQ (Consumer) Yapıları
 
-Burada, Domain Event kullanıyoruz. Nasıl?
-Eğer Create işlemi esnasında Blog'un isPublish true ise Domain eventi tetiklenip, mail gönderme işleminin başlamasını bekliyoruz.
+Proje içerisinde mesajları işlemek için iki farklı tüketici yapısı kullanılmıştır:
+1. **Console Application**: Bu yaklaşım, uygulamanın açık olduğu sürece çalışır, uygulama kapandığında durduğundan, basit ve hızlı bir şekilde mesajları dinlemek ve işlemek için kullanılmıştır.
+2. **Background Service**: Bu yaklaşım ise, uygulamadan abğımsız olarak çalıştığı için, sürekli çalışan bir servis gerektiren durumlar için tercih edilmiştir. 
 
-
-**Kuyruğu dinleyecek bir proje eklendi. Newsletter.Consumer console.app eklendi. Bu kuyruğu dinleyen consumer . Burada Kuyruğa gönderdiğimiz verileri  (blogId ve mail adresini) response da yakalıyoruz.
-Mail göndermek için fake bir mail yapısı kullandık.
+Her iki tüketici tipi de mesajları alıp işlemek için kullanılmış olup, kullanım amaçlarına göre farklılıklar göstermektedir. Console uygulaması daha çok test ve basit uygulamalar için uygundur, Background Service ise uygulamanın sürekli çalışmasını gerektiren ve daha fazla yönetim ihtiyacı olan durumlar için daha uygun bir çözümdür.
 
 
-***Son Yapılanlar:
-Yetki olmayan sayfaya giriş yapıldığında yönlendirilecek sayfa eklendi.
-ChangeStatus için Checkbox eklendi.Publish etmediğim blog yazısını Publish'e çekip değiştirebilmek için.
-Kuyruğu dinleyecek bir Background Service yazıldı.(Dependency Injection için Service Tool kullanıldı.)
+### RabbitMQ Kullanımı Avantajları
+
+1. **Performans Artışı:** Uygulamanın farklı bölümleri birbirlerini beklemek zorunda kalmaz, bu da genel performansı önemli ölçüde artırır.
+2. **Kaynak Kullanımının Optimizasyonu:** Asenkron iletişim sayesinde, sistem kaynakları daha verimli kullanılır ve daha fazla işlem paralel olarak yürütülebilir.
+3. **Dayanıklılık ve Hata Toleransı:** Bir bölümdeki hata veya gecikme diğer bölümleri etkilemez, bu da uygulamanın genel dayanıklılığını artırır ve hataların daha kolay yönetilmesini sağlar.
+
+
+
 
 
 TEST:

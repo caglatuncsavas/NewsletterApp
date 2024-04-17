@@ -1,6 +1,6 @@
 # Newsletter Application
 Bu proje, .NET MVC kullanılarak geliştirilmiş bir Newsletter uygulamasıdır. Temel amacı, RabbitMQ kullanımını öğrenmek ve bu süreçte Clean Architecture, CQRS ve Domain Events gibi  yazılım geliştirme tekniklerini  uygulamaktır.
-"Projeyi geliştirirken, RabbitMQ ile entegre edilen farklı tüketici yapıları olan Console Application ve Background Service kullanıldı. her birinin sistemdeki rolü ve sağladığı avantajlar gözlemlendi. Öğrenmek ve daha derinlemesine anlamak isteyenler için, bu yapıların nasıl kullanıldığını gösteren kodlar projemde mevcuttur ve incelenebilir.
+"Projeyi geliştirirken, RabbitMQ ile entegre edilen farklı tüketici yapıları olan Console Application ve Background Service kullanıldı. Her birinin sistemdeki rolü ve sağladığı avantajlar gözlemlendi. Öğrenmek ve daha derinlemesine anlamak isteyenler için, bu yapıların nasıl kullanıldığını gösteren kodlar projemde mevcuttur ve incelenebilir.
 
 ## Kullanılan Teknolojiler
 - **MVC**: Model-View-Controller mimarisi.

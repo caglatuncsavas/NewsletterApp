@@ -1,6 +1,6 @@
 # Newsletter Application
 Bu proje, .NET MVC kullanılarak geliştirilmiş bir Newsletter uygulamasıdır. Temel amacı, RabbitMQ kullanımını öğrenmek ve bu süreçte Clean Architecture, CQRS ve Domain Events gibi  yazılım geliştirme tekniklerini  uygulamaktır.
-"Projeyi geliştirirken, RabbitMQ ile entegre edilen farklı tüketici yapıları olan Console Application ve Background Service kullanıldı. her birinin sistemdeki rolü ve sağladığı avantajlar gözlemlendi. Öğrenmek ve daha derinlemesine anlamak isteyenler için, bu yapıların nasıl kullanıldığını gösteren kodlar projemDE mevcuttur ve incelenebilir.
+"Projeyi geliştirirken, RabbitMQ ile entegre edilen farklı tüketici yapıları olan Console Application ve Background Service kullanıldı. her birinin sistemdeki rolü ve sağladığı avantajlar gözlemlendi. Öğrenmek ve daha derinlemesine anlamak isteyenler için, bu yapıların nasıl kullanıldığını gösteren kodlar projemde mevcuttur ve incelenebilir.
 
 ## Kullanılan Teknolojiler
 - **MVC**: Model-View-Controller mimarisi.
@@ -31,7 +31,7 @@ Bu proje, .NET MVC kullanılarak geliştirilmiş bir Newsletter uygulamasıdır.
 ### Newsletter Yönetimi - Consumer: Console.App
 - Yeni blog ekleme.
 - SeedData ile Subscriber listesine fake veri basma.
-- Yazımı tamamlanan blogları mail olarak göndermek için kuyruk sistemi kullanılacağından Queue oluşturuldu. Örnek:Blog publish oldu, 1000 tane mail kuyruğa gönderildi.
+- Yazımı tamamlanan blogları mail olarak göndermek için kuyruk sistemi kullanılacağından Queue oluşturuldu. Örnek: Blog publish oldu, 1000 tane mail kuyruğa gönderildi.
 - Blog yazısının Publish edilmesi sürecinde DomainEvent kullanıldı. 
 - Kuyruğu dinleyecek bir proje eklendi. "Newsletter.Consumer" console.app .
 - Mail göndermek için fake bir mail yapısı (smtp4dev) kullanıldı.
@@ -64,12 +64,35 @@ Her iki tüketici tipi de mesajları alıp işlemek için kullanılmış olup, k
 
 
 
-TEST:
-Uygulamayı çalıştır.
-Postman de seed data bas.
-blog ekle.
-Kuyruğu kontrol et.
-Consumer consoleapp çalıstır.(Powershell de dotnet run diye çalıştırabilirsiniz ya da vs de solutıon da properties de multiple startup project de Newsletter.Consumer ve Newsletter.MVC yi start diyebilirsiniz. )
-Smtp kontrol et mailler iletilmiş mi?
+# Test Talimatları
 
+Projeyi başarıyla test etmek için aşağıdaki adımları takip edin:
 
+### Console Application - Newsletter.Consumer için Test Talimatları
+
+## Uygulamayı Çalıştırın
+- Uygulamayı yerel geliştirme ortamınızda başlatın.
+
+## Seed Data Yükleme
+- Postman kullanarak veritabanına test verileri ekleyebilrsiniz.
+
+## Blog Ekleme
+- Uygulama üzerinden yeni bir blog yazısı ekleyin.
+
+## Mesaj Kuyruğunu Kontrol Et
+- RabbitMQ yönetim panelinden mesaj kuyruğunu kontrol edin ve yeni eklenen blogun kuyruğa düzgün bir şekilde eklendiğini doğrulayın.
+
+## Consumer Console Uygulamasını Çalıştır
+- PowerShell üzerinde `dotnet run` komutuyla veya Visual Studio'da solution properties altında multiple startup project seçeneğini kullanarak `Newsletter.Consumer` ve `Newsletter.MVC` projelerini başlatın.
+
+## SMTP Kontrolü
+- smtp4dev kullanarak, gönderilen maillerin iletilip iletilmediğini kontrol edin.
+
+### Background Service'ı Çalıştırın
+- Uygulamanın bir parçası olarak Background Service otomatik olarak çalışmaya başlayacaktır. Eğer manuel başlatma gerekiyorsa, ilgili servisi başlatın.
+
+### Blog Yayınlama
+- Yeni bir blog yazısı ekleyin ve yayınlayın. Background Service, blog yayınlandığında ilgili işlemleri otomatik olarak tetikleyecektir.
+
+### E-posta Gönderimini Kontrol Et
+- Background Service tarafından tetiklenen e-posta gönderim işlemlerinin başarılı olup olmadığını kontrol etmek için SMTP server logs'larını inceleyin.

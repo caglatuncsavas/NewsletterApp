@@ -61,10 +61,7 @@ Her iki tüketici tipi de mesajları alıp işlemek için kullanılmış olup, k
 3. **Dayanıklılık ve Hata Toleransı:** Bir bölümdeki hata veya gecikme diğer bölümleri etkilemez, bu da uygulamanın genel dayanıklılığını artırır ve hataların daha kolay yönetilmesini sağlar.
 
 
-
-
-
-# Test Talimatları
+## Test Talimatları
 
 Projeyi başarıyla test etmek için aşağıdaki adımları takip edin:
 

@@ -19,6 +19,7 @@ Kullanılan Kütüphaneler:
 -CTS.Result
 -EntityFrameworkCore.InMemory
 -Scrutor?(Şimdilik inaktif)
+-Bogus
 
 **>Kullanıcı Giriş yaptıktan sonra Newsletter sayfasında BLOG ekleme işlemi: Create()
 **Subscriber listesine tek tek mail göndermek istendiğinde;

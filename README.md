@@ -48,8 +48,8 @@ RabbitMQ, projede asenkron iletişim sağlamak için kritik bir rol oynar. Örne
 
 ### RabbitMQ (Consumer) Yapıları
 Proje içerisinde mesajları işlemek için iki farklı tüketici yapısı kullanılmıştır:
-1. **Console Application**: Bu yaklaşım, uygulamanın açık olduğu sürece çalışır, uygulama kapandığında durduğundan, basit ve hızlı bir şekilde mesajları dinlemek ve işlemek için kullanılmıştır.
-2. **Background Service**: Bu yaklaşım ise, uygulamadan abğımsız olarak çalıştığı için, sürekli çalışan bir servis gerektiren durumlar için tercih edilmiştir. 
+1. **Console Application:** Bu yaklaşım, uygulamanın açık olduğu sürece çalışır, uygulama kapandığında durduğundan, basit ve hızlı bir şekilde mesajları dinlemek ve işlemek için kullanılmıştır.
+2. **Background Service:** Bu yaklaşım ise, uygulamadan abğımsız olarak çalıştığı için, sürekli çalışan bir servis gerektiren durumlar için tercih edilmiştir. 
 
 Her iki tüketici tipi de mesajları alıp işlemek için kullanılmış olup, kullanım amaçlarına göre farklılıklar göstermektedir. Console uygulaması daha çok test ve basit uygulamalar için uygundur, Background Service ise uygulamanın sürekli çalışmasını gerektiren ve daha fazla yönetim ihtiyacı olan durumlar için daha uygun bir çözümdür.
 

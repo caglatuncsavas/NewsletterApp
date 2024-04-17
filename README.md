@@ -37,11 +37,18 @@ Eğer Create işlemi esnasında Blog'un isPublish true ise Domain eventi tetikle
 Mail göndermek için fake bir mail yapısı kullandık.
 
 
+***Son Yapılanlar:
+Yetki olmayan sayfaya giriş yapıldığında yönlendirilecek sayfa
+ChangeStatus için Checkbox eklendi.Publish etmediğim blog yazısını Publish'e çekip değiştirebilmek için.
+Kuyruğu dinleyecek bir Background Service yazıldı.(Dependency Injection için Service Tool kullanıldı.)
+
 
 TEST:
 Uygulamayı çalıştır.
 Postman de seed data bas.
 blog ekle.
 Kuyruğu kontrol et.
-Consumer consoleapp çalıstır.
+Consumer consoleapp çalıstır.(Powershell de dotnet run diye çalıştırabilirsiniz ya da vs de solutıon da properties de multiple startup project de Newsletter.Consumer ve Newsletter.MVC yi start diyebilirsiniz. )
 Smtp kontrol et mailler iletilmiş mi?
+
+

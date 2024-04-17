@@ -38,7 +38,7 @@ Mail göndermek için fake bir mail yapısı kullandık.
 
 
 ***Son Yapılanlar:
-Yetki olmayan sayfaya giriş yapıldığında yönlendirilecek sayfa
+Yetki olmayan sayfaya giriş yapıldığında yönlendirilecek sayfa eklendi.
 ChangeStatus için Checkbox eklendi.Publish etmediğim blog yazısını Publish'e çekip değiştirebilmek için.
 Kuyruğu dinleyecek bir Background Service yazıldı.(Dependency Injection için Service Tool kullanıldı.)
 

@@ -1,77 +1,72 @@
 # Newsletter Application
-Bu proje, .NET MVC kullanılarak geliştirilmiş bir Newsletter uygulamasıdır. Temel amacı, RabbitMQ kullanımını öğrenmek ve bu süreçte Clean Architecture, CQRS ve Domain Events gibi  yazılım geliştirme tekniklerini  uygulamaktır.
-"Projeyi geliştirirken, RabbitMQ ile entegre edilen farklı tüketici yapıları olan Console Application ve Background Service kullanıldı. Her birinin sistemdeki rolü ve sağladığı avantajlar gözlemlendi. Öğrenmek ve daha derinlemesine anlamak isteyenler için, bu yapıların nasıl kullanıldığını gösteren kodlar projemde mevcuttur ve incelenebilir.
+This project is a Newsletter application developed using .NET MVC. The primary goal is to learn the usage of RabbitMQ and apply software development techniques such as Clean Architecture, CQRS, and Domain Events during the process. Different consumer structures integrated with RabbitMQ, such as Console Application and Background Service, were utilized during development. The role and advantages of each within the system were observed. For those who wish to learn and understand these structures in-depth, the codes demonstrating their usage are available in this project for review.
 
-## Kullanılan Teknolojiler
-- **MVC**: Model-View-Controller mimarisi.
-- **CQRS Pattern**: Command Query Responsibility Segregation, komut ve sorguların ayrıştırılması.
-- **Clean Architecture**: Bağımlılıkların düşük olması ve bağımsızlık sağlanması amacıyla katmanlı mimari.
-- **RabbitMQ**: Mesaj kuyruğu yönetimi.
-- **Result Pattern**: İşlemlerden dönüş türleriyle ilgili standart bir yapı.
-- **Domain Event**: Domain olaylarının yönetilmesi.
-- **MS SQL**: Veritabanı yönetimi.
+## Technologies Used
+- **MVC**: Model-View-Controller architecture.
+- **CQRS Pattern**: Command Query Responsibility Segregation segregates command and query operations.
+- **Clean Architecture**: Ensures low dependencies and independence through a layered architecture.
+- **RabbitMQ**: Message queuing management.
+- **Result Pattern**: Standard structure related to the returns from operations.
+- **Domain Event**: Management of domain events.
+- **MS SQL**: Database management.
 
-## Kullanılan Kütüphaneler
-- **Identity**: Kimlik ve yetkilendirme işlemleri için.
-- **MediatR**: CQRS deseni uygulamalarında mediator kullanımı.
-- **AutoMapper**: Nesneler arası otomatik tip dönüşümleri.
-- **CTS.Result**: İşlem sonuçlarını standart bir formatta döndürmek için.
-- **Scrutor**: (Şu anda inaktif) - Uygulama başlatılırken servis kaydı yapmak için.
-- **Bogus**:  Subscriber listesine tek tek mail gönderebilmek içn fake veriler oluşturmak için.
-- **FluentEmail.Smtp (smtp4dev )**: Geliştirme sürecinde mail gönderimlerini test etmek için
+## Libraries Used
+- **Identity**: For authentication and authorization processes.
+- **MediatR**: Used as a mediator in CQRS pattern implementations.
+- **AutoMapper**: For automatic type conversions between objects.
+- **CTS.Result**: Provides a standard format for operation results.
+- **Scrutor**: Automatically registers services by scanning assemblies, simplifying dependency injection setup.
+- **Bogus**: To generate fake data for the subscriber list.
+- **FluentEmail.Smtp (smtp4dev )**: Used for testing mail sending during development.
 
-## Özellikler
+## Features
 
-### Kullanıcı Girişi
-- Cookie tabanlı kimlik doğrulama yapısı.
-- Home, Login ve Newsletter sayfaları.
-- Otomatik atanan bir kullanıcı eklendi.
-- Yetki olmayan sayfaya giriş yapıldığında yönlendirilecek sayfa eklendi.
+### User Login
+- **Authentication**: Cookie-based authentication system.
+- **Pages**: Home, Login, and Newsletter pages.
+- **User Management**: Automatically assigned a user; redirection implemented for unauthorized page access.
 
-### Newsletter Yönetimi - Consumer: Console.App
-- Yeni blog ekleme.
-- SeedData ile Subscriber listesine fake veri basma.
-- Yazımı tamamlanan blogları mail olarak göndermek için kuyruk sistemi kullanılacağından Queue oluşturuldu. Örnek: Blog publish oldu, 1000 tane mail kuyruğa gönderildi.
-- Blog yazısının Publish edilmesi sürecinde DomainEvent kullanıldı. 
-- Kuyruğu dinleyecek bir proje eklendi. "Newsletter.Consumer" console.app .
-- Mail göndermek için fake bir mail yapısı (smtp4dev) kullanıldı.
+### Newsletter Management - Consumer: Console App
+- Adding new blogs.
+- Seeding fake data into the Subscriber list using SeedData.
+- Creating a Queue for sending completed blogs as emails. Example: Once a blog is published, 1000 emails are queued.
+- DomainEvent was used in the process of publishing the blog post.
+- Added a project to listen to the queue. "Newsletter.Consumer" ConsoleApp.
+- A fake mail structure (smtp4dev) was used to send mail.
 
-### Newsletter Yönetimi - Consumer: BackgroundService
-- Publish edilmeyen blog yazısını Publish'e çekip değiştirebilmek için(ChangeStatus) Checkbox eklendi.
-- Kuyruğu dinleyecek bir Background Service yazıldı.(Dependency Injection için Service Tool kullanıldı.)
+### Newsletter Management - Consumer: BackgroundService
+- A Checkbox (ChangeStatus) has been added to pull the unpublished blog post to Publish and change it.
+- A Background Service was written to listen to the Queue. (Service Tool was used for Dependency Injection.)
 
 ##
 
-### RabbitMQ ile Asenkron İletişim
-RabbitMQ, projede asenkron iletişim sağlamak için kritik bir rol oynar. Örneğin, bir uygulamanın bir bölümünde oluşturulan veri veya bilgi, başka bir bölümde işlenmek üzere RabbitMQ kullanılarak gönderilir. Bu işlem asenkron gerçekleşir; yani bir bölüm işini bitirip mesajı gönderdikten sonra, diğer bölüm mesajı alıp işlemeye hazır olduğunda işleme başlar. Bu, mesajı gönderen bölümün kendi işlemlerine devam etmesine olanak tanır ve mesajın alınıp işlenmesini beklemez.
+### Asynchronous Communication with RabbitMQ
+RabbitMQ plays a critical role to provide asynchronous communication in the project. For example, data or information created in one part of an application is sent using RabbitMQ to be processed in another part. This process occurs asynchronously; That is, after one part finishes its work and sends the message, the other part starts processing when it receives the message and is ready to process it. This allows the part that sent the message to continue its own operations and not wait for the message to be received and processed.
 
+### RabbitMQ (Consumer) Structures
+Two different consumer structures are used to process messages within the project:
+1. **Console Application**: This approach works while the application is open and stops when the application is closed, used for simple and rapid message processing.
+2. **Background Service**: This approach operates independently of the application, preferred for situations requiring continuous service.
 
-### RabbitMQ (Consumer) Yapıları
-Proje içerisinde mesajları işlemek için iki farklı tüketici yapısı kullanılmıştır:
-1. **Console Application:** Bu yaklaşım, uygulamanın açık olduğu sürece çalışır, uygulama kapandığında durduğundan, basit ve hızlı bir şekilde mesajları dinlemek ve işlemek için kullanılmıştır.
-2. **Background Service:** Bu yaklaşım ise, uygulamadan abğımsız olarak çalıştığı için, sürekli çalışan bir servis gerektiren durumlar için tercih edilmiştir. 
+Both consumer types are used for message processing and differ based on their usage purposes. The Console Application is suitable for testing and simple applications, while the Background Service is better suited for continuous operation and requires more management.
 
-Her iki tüketici tipi de mesajları alıp işlemek için kullanılmış olup, kullanım amaçlarına göre farklılıklar göstermektedir. Console uygulaması daha çok test ve basit uygulamalar için uygundur, Background Service ise uygulamanın sürekli çalışmasını gerektiren ve daha fazla yönetim ihtiyacı olan durumlar için daha uygun bir çözümdür.
+### Advantages of Using RabbitMQ
+1. **Performance Increase**: Different parts of the application do not have to wait for each other, significantly improving overall performance.
+2. **Resource Utilization Optimization**: Asynchronous communication allows for more efficient use of system resources and more processes to be executed in parallel.
+3. **Resilience and Error Tolerance**: Errors or delays in one part do not affect other parts, enhancing the application's overall resilience and simplifying error management.
 
+## Test Instructions
+To test the project successfully, follow these steps:
 
-### RabbitMQ Kullanımı Avantajları
-1. **Performans Artışı:** Uygulamanın farklı bölümleri birbirlerini beklemek zorunda kalmaz, bu da genel performansı önemli ölçüde artırır.
-2. **Kaynak Kullanımının Optimizasyonu:** Asenkron iletişim sayesinde, sistem kaynakları daha verimli kullanılır ve daha fazla işlem paralel olarak yürütülebilir.
-3. **Dayanıklılık ve Hata Toleransı:** Bir bölümdeki hata veya gecikme diğer bölümleri etkilemez, bu da uygulamanın genel dayanıklılığını artırır ve hataların daha kolay yönetilmesini sağlar.
+### For Consumer as Console Application (Newsletter.Consumer) 
+- **Run the Application**: Start the application in your local development environment.
+- **Seed Data Loading**: You can load test data to the database using Postman.
+- **Add Blog**: Add a new blog post through the application.
+- **Check Message Queue**: Check the message Queue from the RabbitMQ Admin Panel and verify that the newly added blog is added to the Queue properly.
+- **Run Consumer Console Application**: Use `dotnet run` in PowerShell or set up multiple startup projects in Visual Studio to start both `Newsletter.Consumer` and `Newsletter.MVC`.
+- **SMTP Check**: Use smtp4dev to verify whether the mails have been sent successfully.
 
-
-## Test Talimatları
-Projeyi başarıyla test etmek için aşağıdaki adımları takip edin:
-
-### Consumer olarak: Console Application (Newsletter.Consumer) Kullanımı İçin Test Talimatları
-- **Uygulamayı Çalıştırın**: Uygulamayı yerel geliştirme ortamınızda başlatın.
-- **Seed Data Yükleme**: Postman kullanarak veritabanına test verileri ekleyebilrsiniz.
-- ** Blog Ekleme**: Uygulama üzerinden yeni bir blog yazısı ekleyin.
-- **Mesaj Kuyruğunu Kontrol Et**: RabbitMQ yönetim panelinden mesaj kuyruğunu kontrol edin ve yeni eklenen blogun kuyruğa düzgün bir şekilde eklendiğini doğrulayın
-- **Consumer Console Uygulamasını Çalıştır**: PowerShell üzerinde `dotnet run` komutuyla veya Visual Studio'da solution properties altında multiple startup project seçeneğini kullanarak `Newsletter.Consumer` ve `Newsletter.MVC` projelerini başlatın.
-- **SMTP Kontrolü**: smtp4dev kullanarak, gönderilen maillerin iletilip iletilmediğini kontrol edin.
-
-### Consumer olarak: Background Service Kullanımı İçin Test Talimatları 
-- Uygulamanın bir parçası olarak Background Service otomatik olarak çalışmaya başlayacaktır. Eğer manuel başlatma gerekiyorsa, ilgili servisi başlatın.
-- **Blog Yayınlama**: eni bir blog yazısı ekleyin ve yayınlayın. Background Service, blog yayınlandığında ilgili işlemleri otomatik olarak tetikleyecektir.
-- **E-posta Gönderimini Kontrol Et**: Background Service tarafından tetiklenen e-posta gönderim işlemlerinin başarılı olup olmadığını kontrol etmek için SMTP server logs'larını inceleyin.
+### For Consumer as Background Service
+- Background Service starts automatically as part of the application. If manual start is necessary, initiate the relevant service.
+- **Publish Blog**: Add a new blog post and publish it. Background Service will automatically trigger relevant actions when the blog is published.
+- **Check Email Sending**: Examine the SMTP server logs to check whether e-mail sending operations triggered by Background Service are successful.
